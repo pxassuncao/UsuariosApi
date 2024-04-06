@@ -24,7 +24,7 @@ namespace UsuariosApi.Services
 
             var signingCredentials =
                 new SigningCredentials(chave,
-                SecurityAlgorithms.Aes128CbcHmacSha256);
+                SecurityAlgorithms.HmacSha256);
 
             var token = new JwtSecurityToken
                 (

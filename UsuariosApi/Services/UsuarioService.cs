@@ -45,10 +45,10 @@ namespace UsuariosApi.Services
                 throw new ApplicationException("Usuario não autenticado!");
             }
 
-            var usuario = _signInManager
+            var usuario =  _signInManager
                 .UserManager
                 .Users
-                .FirstOrDefaultAsync(user=> user.NormalizedUserName == dto.Username.ToUpper());
+                .FirstOrDefault(user=> user.NormalizedUserName == dto.Username.ToUpper());
 
             
              var token = _tokenService.GenerateToken(usuario);
